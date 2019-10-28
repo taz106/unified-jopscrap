@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Unified Job Board</title>
+  </head>
+  <body>
+    <div>
+      <p>Tittle</p>
+      <p><a href="{{ jobad['ad_url'] }}">{{ jobad["title"] }}</a></p>
+      <p>
+          {% if jobad["company_name"] %}
+            {{ jobad["company_name"] }}, 
+          {% endif %}
+            {{ jobad["location"] }}
+        </p>
+      <p>
+        {{ jobad['description'] }}
+      </p>
+    </div>
+  </body>
+</html>

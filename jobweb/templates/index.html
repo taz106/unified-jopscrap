@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unified Job Board</title>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Welcome to Unified Job Board</h2>
+
+    <div style="margin: 5px;">
+        {% if jobadlist %}
+        <ol>
+            {% for jobad in jobadlist %}
+                <li>
+                    <p>Tittle</p>
+                    <p>{{ jobad['title'] }}</p>
+                    <p>{{ jobad['company_name'] }}, {{ jobad['location'] }}</p>
+                    <p><a href="/job/{{ jobad['id'] }}">Click here for more information....</a>></p>
+                </li>
+                
+            {% endfor %}
+        </ol>
+        {% else %}
+            <h2>No job to show</h2>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
